@@ -35,8 +35,6 @@ git clone https://github.com/developer-student-club-thapar/Autonomous-Driving.gi
 pip install -r requirements.txt
 ```
 ### Running the demo
-[Link for Demo 1](../Demo 1.gif)<br />
-[Link for Demo 2](../demo/Demo 2.gif)<br />
 Run the following command : 
 ```
 python autolabeler.py --basedir "all" --datafile "angles.csv" --savefile "./output.csv"
