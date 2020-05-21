@@ -46,12 +46,13 @@ python autolabeler.py --basedir "all" --datafile "angles.csv" --savefile "./outp
 ### Training the Neural Network
 * Make sure your dataset-images are in folder named 'all' at the root directory.
 * Make sure your angles.csv and actions.csv are in the root directory named 'angles.csv' and 'actions.csv' respectively.
-* The models.py contain architectures of 4-different neural networks named: 
+* The models.py contain architectures of 5-different neural networks named: 
    * comma.ai
    * pretrained_vgg16
    * nvidia-dave2
    * 3D-CNN
- * Run the followuing command : 
+   * CNN LSTM
+ * Run the following command : 
  ```
  python steering-model.py --model "model_name from above list"
  ```

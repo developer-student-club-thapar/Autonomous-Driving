@@ -127,7 +127,7 @@ def models(model_name):
                                      verbose=1,
                                      save_best_only=False)
 
-    if model_name == '3D-CNN':
+    if model_name == '3D-CNN' :
         df, train_df, val_df, test_df = load_data_3D_CNN(rate=3)
 
         HEIGHT, WIDTH, DEPTH = 170, 303, 16
@@ -135,7 +135,7 @@ def models(model_name):
         model = CNN_3D(input_shape=(DEPTH, HEIGHT, WIDTH, 3))
 
         train_generator = DataGenerator3D(img_paths=train_df['filename'],
-                                          angles=train_df['angle'],
+        								  angles=train_df['angle'],
                                           actions=train_df['action'],
                                           base_path='./all',
                                           dim=(303, 170),
@@ -163,6 +163,42 @@ def models(model_name):
                                      verbose=1,
                                      save_best_only=False)
 
+    if model_name == 'CNN_LSTM':
+    	df, train_df, val_df, test_df = load_data(rate=1)
+
+        HEIGHT, WIDTH = 170, 303
+    	model = CNN_LSTM(input_shape=(HEIGHT,WIDTH,3))
+    	train_generator = DataGenerator3D(img_paths=train_df['filename'],angles= train_df['angle'], 
+    												actions=train_df['action'], 
+    												base_path='./all', 
+    												dim=(303, 170),
+    												batch_size=32,
+    												overlap=5,
+    												depth = 10,
+    												augmentation_rate=0
+    												)
+		val_generator = DataGenerator3D(img_paths=val_df['filename'],
+    												angles= val_df['angle'], 
+    												actions=val_df['action'], 
+    												base_path='./all', 
+    												dim=(303, 170),
+    												batch_size=32,
+    												overlap=5,
+    												depth = 10
+    												)
+
+		tensorboard = TensorBoard(log_dir="logs/CNN-LSTM-Steering-Model/{}".format(time()),
+                                  histogram_freq=1,
+                                  write_graph=True)
+
+        filepath = "save_model/CNN-LSTM" + "CNN-LSTM-Steering-Model-" + "saved-model-2-{epoch:02d}-{val_loss:.2f}.hdf5"
+        checkpoint = ModelCheckpoint(filepath,
+                                     monitor='val_loss',
+                                     verbose=1,
+                                     save_best_only=False)
+
+
+
     model.summary()
     optimizer = Nadam(lr=1e-6,
                       beta_1=0.9,
@@ -186,6 +222,13 @@ def models(model_name):
                                   shuffle=True,
                                   callbacks=callbacks_list,
                                   validation_data=val_generator)
+
+
+    
+
+
+
+
 
 
 if __name__ == '__main__':
