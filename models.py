@@ -135,3 +135,37 @@ def CNN_3D(input_shape):
     model.add(Dense(1, activation='tanh'))
 
     return model
+def CNN_LSTM(input_shape):
+	model = Sequential()
+	model.add(Conv2D(32, (5,5), padding='same', input_shape=input_shape))
+  	model.add(BatchNormalization())
+  	model.add(ReLU())
+  	model.add(MaxPooling2D((2,2)))
+
+  	model.add(Conv2D(64, (3,3), padding='same'))
+  	model.add(BatchNormalization())
+  	model.add(ReLU())
+  	model.add(MaxPooling2D((2,2)))
+
+  	model.add(Conv2D(128, (3,3), padding='same'))
+  	model.add(BatchNormalization())
+  	model.add(ReLU())
+  	model.add(MaxPooling2D((2,2)))
+
+  	model.add(GlobalAveragePooling2D())
+
+  	model.add(Dense(512, activation='relu', name='fc1', kernel_initializer = "normal"))
+  	model.add(Dropout(.2))
+
+  	model_lstm = Sequential()
+  	model_lstm.add(TimeDistributed(model,input_shape=(None,input_shape[0],input_shape[1],3)))
+  	model_lstm.add(TimeDistributed(Flatten()))
+  	model_lstm.add(LSTM(256, activation='relu', return_sequences=False))
+
+  	model_lstm.add(Dense(64, activation='relu'))
+    model_lstm.add(Dropout(.2))
+    model_lstm.add(Dense(32, activation='relu'))
+    model_lstm.add(Dropout(.1))
+    model_lstm.add(Dense(1, activation='tanh'))
+ 
+  
