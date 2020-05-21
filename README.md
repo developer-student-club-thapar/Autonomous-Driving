@@ -39,7 +39,7 @@ Run the following command :
 ```
 python autolabeler.py --basedir "all" --datafile "angles.csv" --savefile "./output.csv"
 ```
-* basedir : Path to folder that dataset folder
+* basedir : Path to folder that contains dataset folder
 * datafile : Path to angles.csv
 * savefile : Path to store output.csv
 
