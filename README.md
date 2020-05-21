@@ -10,7 +10,7 @@
 <a href="https://facebook.com/dscthapar"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="60"></a>
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
-</dic>
+</div>
 
 
 # Autonomous-Driving
@@ -35,6 +35,8 @@ git clone https://github.com/developer-student-club-thapar/Autonomous-Driving.gi
 pip install -r requirements.txt
 ```
 ### Running the demo
+![Demo 1](demo/Demo 1.gif)
+![Demo 2](demo/Demo 2.gif)<br />
 Run the following command : 
 ```
 python autolabeler.py --basedir "all" --datafile "angles.csv" --savefile "./output.csv"
