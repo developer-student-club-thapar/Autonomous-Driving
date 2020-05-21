@@ -34,6 +34,8 @@ git clone https://github.com/developer-student-club-thapar/Autonomous-Driving.gi
 ```
 pip install -r requirements.txt
 ```
+* Then run `pre-commit install`. It will install pre-commit hook for various configurations.
+
 ### Running the demo
 Run the following command : 
 ```
@@ -61,5 +63,27 @@ python autolabeler.py --basedir "all" --datafile "angles.csv" --savefile "./outp
  python steering-model.py --model "comma.ai"
  ```
  ***NOTE : Use exact name as mentioned above to avoid unnecessary bugs.***
+
+Contribution to the project
+------------
+<div align="center">
+
+[![GitHub issues](https://img.shields.io/github/issues/developer-student-club-thapar/Autonomous-Driving?logo=github)](https://github.com/developer-student-club-thapar/Autonomous-Driving/issues) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/developer-student-club-thapar/Autonomous-Driving?logo=git&logoColor=white) ![GitHub contributors](https://img.shields.io/github/contributors/developer-student-club-thapar/Autonomous-Driving?logo=github)
+
+</div>
+We follow a systematic Git Workflow -
+
+- Create a fork of this repo.
+- Clone your fork of your repo on your pc.
+- [Add Upstream to your clone](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork)
+- **Every change** that you do, it has to be on a branch. Commits on master would directly be closed.
+- Make sure that before you create a new branch for new changes,[syncing with upstream](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) is neccesary.
+
+**Commits**
+* Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
+* Make sure your PR's description contains GitHub's special keyword references that automatically close the related issue when the PR is merged. (Check [this](https://github.com/blog/1506-closing-issues-via-pull-requests) for more info)
+* When you make very very minor changes to a PR of yours (like for example fixing a failing Travis build or some small style corrections or minor changes requested by reviewers) make sure you squash your commits afterward so that you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
+
+
 ## LICENSE
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
