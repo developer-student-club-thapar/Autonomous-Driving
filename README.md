@@ -1,6 +1,6 @@
 <div align = "center">
 
-<img height=200px src= "https://github.com/developer-student-club-thapar/officialWebsite/blob/master/Frontend/src/assets/dsc_logo.png">
+<img height=200px src= "https://github.com/developer-student-club-thapar/officialWebsite/blob/master/src/assets/dsc_logo.png">
 
 <h1>DEVELOPER STUDENT CLUBS TIET</h1>
 
@@ -10,10 +10,9 @@
 <a href="https://facebook.com/dscthapar"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="60"></a>
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
-</div>
-
-
 # Autonomous-Driving
+
+</div>
 
 This repository contains the code for steering a self-driving vehicle.
 
