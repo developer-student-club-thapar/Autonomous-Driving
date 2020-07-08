@@ -163,9 +163,10 @@ def CNN_LSTM(input_shape):
   	model_lstm.add(LSTM(256, activation='relu', return_sequences=False))
 
   	model_lstm.add(Dense(64, activation='relu'))
-    model_lstm.add(Dropout(.2))
-    model_lstm.add(Dense(32, activation='relu'))
-    model_lstm.add(Dropout(.1))
-    model_lstm.add(Dense(1, activation='tanh'))
+	model_lstm.add(Dropout(.2))
+	model_lstm.add(Dense(32, activation='relu'))
+	model_lstm.add(Dropout(.1))
+	model_lstm.add(Dense(1, activation='tanh'))
+	return model
  
   
